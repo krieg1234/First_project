@@ -1,0 +1,249 @@
+/*Шрифты*/
+@font-face {
+  font-family: 'ProximaNova_Rg';
+  src: url('../fonts/transfonter.org-20210104-103004/ProximaNova-Regular.eot');
+  src: url('../fonts/transfonter.org-20210104-103004/ProximaNova-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/transfonter.org-20210104-103004/ProximaNova-Regular.woff2')
+      format('woff2'),
+    url('../fonts/transfonter.org-20210104-103004/ProximaNova-Regular.woff')
+      format('woff'),
+    url('../fonts/transfonter.org-20210104-103004/ProximaNova-Regular.ttf')
+      format('truetype'),
+    url('../fonts/transfonter.org-20210104-103004/ProximaNova-Regular.svg#ProximaNova-Regular')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.reg() {
+  font-family: 'ProximaNova_Rg', sans-serif;
+}
+
+.bold() {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  letter-spacing: 0.3rem;
+}
+
+/*Цвета*/
+@btn-color: orange;
+@icons-color: green;
+@text: black;
+@danger: red;
+@bg-light: #f5f5f5;
+@ligth: white;
+@border-input: orange;
+
+/*Базовые настройки*/
+html {
+  font-size: 10px;
+}
+
+body {
+  .reg();
+}
+
+.btn {
+  background-color: @btn-color;
+  color: @ligth;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  box-shadow: 2px 2px 5px;
+  cursor: pointer;
+  background-color: lighten(@btn-color, 10%);
+}
+
+button,
+a,
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+/*Типографика*/
+section {
+  padding: 10rem 0;
+}
+
+/*Main*/
+main {
+  padding: 3rem;
+  background: url(https://images.pexels.com/photos/3965509/pexels-photo-3965509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+    center center no-repeat;
+  background-size: 100%;
+
+  .header {
+    background-color: @ligth;
+    img {
+      height: 7rem;
+      position: relative;
+      top: 0;
+    }
+    p {
+      display: inline-block;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .logo {
+      position: relative;
+      left: -5px;
+    }
+    .phone {
+      .bold();
+      font-weight: 900;
+      font-size: 2rem;
+      overflow: hidden;
+      color: @text;
+      text-decoration: none;
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: @text;
+        transform: scaleX(0);
+        transition: all 0.5s;
+      }
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+    .btn-container {
+    }
+  }
+
+  .content {
+    padding: 3rem 0;
+    &-title {
+      margin-top: 0rem;
+      h1 {
+        .bold();
+        line-height: 1.45;
+        font-size: 4rem;
+        text-transform: uppercase;
+        margin-bottom: 4rem;
+      }
+    }
+    &-subtitle {
+      font-size: 2.4rem;
+      margin-bottom: 4rem;
+    }
+    span {
+      display: inline-block;
+      padding: 3rem 5rem;
+      font-size: 1.8rem;
+      color: @ligth;
+      text-align: center;
+      background-color: @icons-color;
+      strong {
+        font-size: 3rem;
+        .bold();
+      }
+    }
+    &-trigger {
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      .bold();
+      display: block;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    &-form {
+      border-radius: 15px;
+      background-color: @ligth;
+      padding: 4rem 5rem;
+      text-align: center;
+      .form-header {
+        font-size: 1.8rem;
+      }
+      .form-label {
+        padding: 0.5rem;
+        position: relative;
+        top: 3rem;
+        background-color: @ligth;
+        font-size: 1.3rem;
+      }
+      .form-control {
+        margin: 1rem 0;
+        border: 1px @border-input solid;
+        width: 100%;
+        padding: 1.7rem;
+        font-size: 2rem;
+        &:focus {
+          outline: none;
+          border: orange 1px solid;
+          box-shadow: 2px 2px 5px gray;
+        }
+      }
+
+      .btn {
+        width: 100%;
+        margin-top: 3rem;
+      }
+      small {
+        display: block;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
+
+.section-header {
+  margin: 2rem 0 10rem;
+  .bold();
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.features {
+  background-color: @bg-light;
+  padding: 1rem;
+  &-block {
+    text-align: center;
+    h2 {
+      .bold();
+      font-size: 4rem;
+      margin: 2rem 2rem;
+    }
+    p {
+      width: 80%;
+      display: block;
+      margin: 0 auto;
+      font-size: 1.5rem;
+    }
+  }
+
+  svg {
+    fill: @icons-color;
+    display: block;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 767px) {
+  main {
+    background-position: top;
+  }
+  .logo {
+    display: block;
+    text-align: right;
+  }
+  .brand {
+    justify-self: start;
+  }
+  .phone-container,
+  .btn-container {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+}

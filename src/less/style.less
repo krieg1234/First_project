@@ -72,13 +72,60 @@ section {
   padding: 10rem 0;
 }
 
+form {
+  border-radius: 15px;
+  background-color: @ligth;
+  padding: 4rem 5rem;
+  text-align: center;
+  .form-header {
+    font-size: 1.8rem;
+  }
+  .form-label {
+    padding: 0.5rem;
+    position: relative;
+    top: 3rem;
+    background-color: @ligth;
+    font-size: 1.3rem;
+  }
+  .form-control {
+    margin: 1rem 0;
+    border: 1px @border-input solid;
+    width: 100%;
+    padding: 1.7rem;
+    font-size: 2rem;
+    border-radius: 5px;
+    &:focus {
+      outline: none;
+      border: orange 1px solid;
+      box-shadow: 2px 2px 5px gray;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 3rem;
+  }
+  small {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
 /*Main*/
+.container {
+  background: url() center center no-repeat;
+  background-size: 100%;
+}
+
 main {
   padding: 3rem;
-  background: url(https://images.pexels.com/photos/3965509/pexels-photo-3965509.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
-    center center no-repeat;
-  background-size: 100%;
-
+  .section-header {
+    margin: 2rem 0 10rem;
+    .bold();
+    font-size: 3.6rem;
+    text-align: center;
+  }
   .header {
     background-color: @ligth;
     img {
@@ -122,6 +169,16 @@ main {
   }
 
   .content {
+    &-main {
+      background: url(https://image.freepik.com/free-photo/surprised-workman-on-white-background_1459-2511.jpg)
+        center no-repeat;
+      background-size: contain;
+    }
+    &-howWeWork {
+      background: url(https://img.freepik.com/free-photo/frustrated-workman-over-white-background_1368-5557.jpg?size=338&ext=jpg)
+        center no-repeat;
+      background-size: contain;
+    }
     padding: 3rem 0;
     &-title {
       margin-top: 0rem;
@@ -157,82 +214,486 @@ main {
       margin-top: 3rem;
       margin-bottom: 3rem;
     }
-
-    &-form {
-      border-radius: 15px;
-      background-color: @ligth;
-      padding: 4rem 5rem;
+  }
+  .features {
+    background-color: @bg-light;
+    padding: 1rem;
+    &-block {
       text-align: center;
-      .form-header {
-        font-size: 1.8rem;
+      h3 {
+        .bold();
+        font-size: 1.5rem;
+        margin: 2rem 2rem;
       }
-      .form-label {
-        padding: 0.5rem;
-        position: relative;
-        top: 3rem;
-        background-color: @ligth;
-        font-size: 1.3rem;
+      p {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        font-size: 1.5rem;
       }
-      .form-control {
-        margin: 1rem 0;
-        border: 1px @border-input solid;
+    }
+
+    svg {
+      fill: @icons-color;
+      display: block;
+      margin: 2rem auto;
+    }
+    .slick-prev:before,
+    .slick-next:before {
+      color: @icons-color;
+      font-size: 5rem;
+    }
+    .slick-prev {
+      left: -10px;
+    }
+    .slick-next {
+      right: 20px;
+    }
+    .slick-slide:focus {
+      outline: none;
+    }
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &-close {
+      position: absolute;
+      top: -2.5rem;
+      right: -2.5rem;
+      text-align: center;
+      border: none;
+      background-color: transparent;
+      font-size: 3rem;
+      &:hover {
+        color: @btn-color;
+      }
+    }
+    &-content {
+      text-align: center;
+      position: fixed;
+      left: 50%;
+      top: 10%;
+      background-color: @ligth;
+      transform: translateX(-50%);
+      padding: 1rem 1rem;
+      border: @btn-color 2px solid;
+      border-radius: 15px;
+    }
+
+    .content-form {
+      padding: 2rem 3rem;
+    }
+
+    #message-input {
+      font-size: 1rem;
+    }
+  }
+
+  .price {
+    background-color: @icons-color;
+
+    padding: 1rem;
+    .btn {
+      margin-top: 2rem;
+    }
+    .section-header {
+      margin: 2rem 0rem 3rem;
+      color: @ligth;
+      p {
+        font-size: 1.4rem;
+        .reg();
+      }
+      h2 {
+        font-size: 3.6rem;
+        .bold();
+      }
+    }
+    &-block {
+      background-color: @ligth;
+      box-shadow: 2px 2px 2px black;
+      text-align: center;
+      padding: 1rem 3rem;
+      margin-bottom: 2rem;
+      min-height: 60rem;
+      position: relative;
+      h4 {
+        font-size: 1.9rem;
+        margin: 3rem 0;
+        .bold();
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      img {
+        margin: 10rem auto 2rem auto;
+        display: block;
         width: 100%;
-        padding: 1.7rem;
-        font-size: 2rem;
-        &:focus {
-          outline: none;
-          border: orange 1px solid;
-          box-shadow: 2px 2px 5px gray;
-        }
       }
 
       .btn {
-        width: 100%;
-        margin-top: 3rem;
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
       }
-      small {
+      ul {
+        list-style: none;
+        padding: 0;
+        min-height: 20rem;
+        font-size: 1.6rem;
+        text-align: left;
+        li {
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            background: url(https://icons.getbootstrap.com/icons/check.svg)
+              no-repeat center;
+
+            vertical-align: middle;
+          }
+          &::after {
+            content: '.';
+          }
+        }
+      }
+      .price-tag {
+        padding: 1rem;
+        font-size: 1.9rem;
+        .bold();
+      }
+    }
+  }
+
+  .feedback {
+    position: relative;
+    background-color: @ligth;
+    margin-top: 2rem;
+    padding: 5rem 6rem;
+    box-shadow: 6px 10px 18px 0px rgba(0, 0, 0, 0.11);
+    .object-info {
+      p {
+        margin: 0.1rem;
+      }
+    }
+    .person {
+      margin-top: 3rem;
+      span {
+        font-size: 1.2rem;
+      }
+      h4 {
+        .bold();
+        font-size: 1.4rem;
+      }
+      img {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+      }
+    }
+    &-text {
+      font-style: italic;
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 2px solid @icons-color;
+      position: relative;
+      &::before {
+        content: '';
         display: block;
-        margin-top: 1.5rem;
+        position: absolute;
+        top: -2rem;
+        left: 4rem;
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid @icons-color;
+        border-bottom: none;
+        border-top-right-radius: 100px;
+        background-color: @ligth;
+      }
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    &-slider_item {
+      margin: 5rem;
+      p {
+        font-size: 1.6rem;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .fotorama__nav__shaft {
+      margin-top: 2rem;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: @icons-color;
+      font-size: 5rem;
+    }
+    .slick-prev {
+      left: -5rem;
+    }
+    .slick-next {
+      right: -4rem;
+    }
+    .slick-slide:focus {
+      outline: none;
+    }
+    &-form {
+      z-index: 10;
+      h2 {
+        .bold();
+      }
+
+      .btn {
+        max-width: 30rem;
       }
     }
   }
-}
-
-.section-header {
-  margin: 2rem 0 10rem;
-  .bold();
-  font-size: 3.6rem;
-  text-align: center;
-}
-
-.features {
-  background-color: @bg-light;
-  padding: 1rem;
-  &-block {
-    text-align: center;
-    h2 {
-      .bold();
-      font-size: 4rem;
-      margin: 2rem 2rem;
+  .scheme {
+    background: url(https://memepedia.ru/wp-content/uploads/2017/03/not-bad.jpeg)
+      bottom 10rem right -10rem no-repeat;
+    background-size: 30rem;
+    .section-header {
+      p {
+        font-size: 2rem;
+        .reg();
+      }
     }
-    p {
-      width: 80%;
-      display: block;
-      margin: 0 auto;
-      font-size: 1.5rem;
+
+    &-box {
+      min-height: 20rem;
+
+      img {
+        width: 10rem;
+      }
+      h3 {
+        font-size: 2rem;
+        .bold();
+      }
     }
   }
+  .all-inclusive {
+    .section-header {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.6rem;
+      }
+    }
 
-  svg {
-    fill: @icons-color;
-    display: block;
-    margin: 2rem auto;
+    &-media {
+      font-size: 1.3rem;
+      min-height: 10rem;
+      h4 {
+        .bold();
+        font-size: 1.3rem;
+      }
+      p {
+        .reg();
+      }
+    }
+
+    .circle {
+      display: inline-block;
+      background-color: @icons-color;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+
+      &-border {
+        display: inline-block;
+        width: 5rem;
+        height: 5rem;
+        border: 2px solid @icons-color;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 4rem;
+        padding: 0.3rem;
+        color: @ligth;
+        .bold();
+        font-size: 1.9rem;
+      }
+    }
+  }
+  .problems {
+    position: relative;
+    &-list {
+      border: 4px solid;
+      padding: 2rem;
+      min-height: 35rem;
+      margin-bottom: 2rem;
+      h4 {
+        .bold();
+        font-size: 2.1rem;
+        margin-left: 2rem;
+      }
+      ul {
+        padding: 2rem;
+
+        list-style: none;
+        li {
+          position: relative;
+          margin-bottom: 3rem;
+          padding-left: 2.5rem;
+        }
+        li::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-80%);
+          width: 3rem;
+          height: 3rem;
+          font-size: 3rem;
+        }
+      }
+      &_bad {
+        border-color: @danger;
+
+        h4 {
+          opacity: 0.5;
+        }
+        ul {
+          li::before {
+            content: 'x';
+            color: @danger;
+          }
+        }
+      }
+      &_good {
+        border-color: @icons-color;
+        ul {
+          li::before {
+            content: '+';
+            color: @icons-color;
+          }
+        }
+      }
+    }
+    &-girl {
+      img {
+        position: absolute;
+
+        width: 30%;
+        bottom: 12rem;
+        left: 50%;
+        margin-left: -20rem;
+        z-index: -1;
+      }
+    }
+  }
+  .materials {
+    background: @ligth center no-repeat;
+    .section-header {
+      margin-bottom: 2rem;
+      p {
+        .reg();
+        font-size: 1.8rem;
+      }
+    }
+    &-block {
+      text-align: center;
+      img {
+        width: 80%;
+        display: block;
+        margin: auto;
+      }
+      h4 {
+        .bold();
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.8rem;
+      }
+    }
+    &-link {
+      font-size: 1.2rem;
+      color: @icons-color;
+      border-bottom: 1px dotted @icons-color;
+      text-decoration: none;
+      &:hover {
+        color: darken(@icons-color, 10%);
+        cursor: pointer;
+      }
+    }
+    &-offer {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 2rem;
+      a {
+        font-size: 2rem;
+      }
+    }
+    &-slider {
+      .slick-prev:before,
+      .slick-next:before {
+        color: @icons-color;
+        font-size: 5rem;
+      }
+      .slick-prev {
+        left: -5rem;
+      }
+      .slick-next {
+        right: -2rem;
+      }
+      .slick-slide:focus {
+        outline: none;
+      }
+    }
+  }
+  .upsell {
+    text-align: center;
+    background-color: lighten(@icons-color, 10%);
+    color: @ligth;
+    p {
+      font-size: 2rem;
+      .reg();
+    }
+    &-block {
+      margin-bottom: 1.5rem;
+
+      img {
+        width: 80%;
+        margin: auto;
+      }
+      p {
+        margin-top: 1rem;
+        font-size: 1.4rem;
+        .bold();
+      }
+    }
   }
 }
 
 @media (max-width: 767px) {
   main {
     background-position: top;
+
+    .scheme {
+      text-align: center;
+      background: none;
+      min-height: auto;
+    }
   }
   .logo {
     display: block;
@@ -245,5 +706,28 @@ main {
   .btn-container {
     justify-content: center;
     margin-top: 0.5rem;
+  }
+  .problems-list {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 1119px) {
+  main {
+    .content {
+      &-main {
+        background: none;
+      }
+      &-howWeWork {
+        background: none;
+      }
+    }
+
+    .problems-girl {
+      display: none;
+    }
+    .problems-list {
+      min-height: 40rem;
+    }
   }
 }

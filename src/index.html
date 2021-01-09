@@ -16,6 +16,16 @@
     <title>First project</title>
     <link rel="stylesheet" type="text/css" href="slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
   </head>
   <body>
     <main>
@@ -38,18 +48,24 @@
             <div
               class="phone-container col-md-3 col-sm-12 offset-md-3 d-flex flex-row align-items-center"
             >
-              <a class="phone" href="#">+712345678</a>
+              <a
+                class="phone"
+                data-bs-target="#consultation"
+                data-bs-toggle="modal"
+                >+1234567</a
+              >
             </div>
             <div
               class="btn-container col-md-3 col-sm-12 d-flex align-items-center"
             >
-              <a class="btn header-btn" href="#" role="button"
+              <a class="btn header-btn popup-btn" role="button"
                 >Получить консультацию</a
               >
             </div>
           </div>
         </div>
-        <div class="content">
+
+        <div class="content content-main">
           <div class="row">
             <div class="col-lg-6 text-center">
               <div class="content-title">
@@ -85,7 +101,7 @@
           </div>
         </div>
 
-        <section class="features my-0">
+        <section class="features">
           <h2 class="section-header">Преимущества работы с нами</h2>
           <div class="fetures-slider">
             <div class="features-block">
@@ -120,7 +136,7 @@
                   d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z"
                 />
               </svg>
-              <h3 class="text-center">Заключаем договр</h3>
+              <h3 class="text-center">Заключаем договор</h3>
               <p class="text-center">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Quibusdam inventore harum neque.
@@ -166,8 +182,689 @@
             </div>
           </div>
         </section>
+        <section class="price">
+          <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+              <div class="section-header">
+                <h2>Цены</h2>
+                <p>Выберите вариант, который подходит Вам</p>
+              </div>
+            </div>
+            <div class="col-lg-4 text-center">
+              <button class="btn btn-price" data-bs-toggle="modal">
+                Расчитать стоимость сейчас
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="price-block">
+                <h4>Чуваки в красивых рубашечках</h4>
+                <img
+                  src="https://images.pexels.com/photos/3680959/pexels-photo-3680959.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  alt="Чуваки в красивых рубашечках"
+                /><span class="price-tag">От 1 почки за 1м<sup>2</sup></span>
+                <ul class="price-list">
+                  <li>Красиво говорят</li>
+                  <li>Красиво машут руками</li>
+                  <li>Готовят красивую документацию</li>
+                  <li>Красиво работают и, неожиданно, просят денег</li>
+                </ul>
+                <button class="btn">Заказать</button>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="price-block">
+                <h4>Образованный азиат</h4>
+                <img
+                  src="https://images.pexels.com/photos/3761508/pexels-photo-3761508.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  alt="Образованный азиат"
+                /><span class="price-tag"
+                  >От кучки шекелей за 1м<sup>2</sup></span
+                >
+                <ul class="price-list">
+                  <li>Непонятно говорит</li>
+                  <li>Машет руками, чтобы Вы его начали понимать</li>
+                  <li>Готовит непонятную документацию</li>
+                  <li>Вроде что-то делает</li>
+                </ul>
+                <button class="btn">Заказать</button>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="price-block">
+                <h4>Толпа азиатов подешевле</h4>
+                <img
+                  src="https://images.pexels.com/photos/33266/work-chinese-industrial-professional.jpg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  alt="Толпа азиатов подешевле"
+                /><span class="price-tag"
+                  >От 1 бутылки хрючева за 1м<sup>2</sup></span
+                >
+                <ul class="price-list">
+                  <li>Их много</li>
+                  <li>Они дешёвые</li>
+                  <li>Они криворукие</li>
+                  <li>Они ленивые</li>
+                  <li>Они растащат весь инструмент</li>
+                  <li>Если повезёт, не спалят хату</li>
+                </ul>
+                <button class="btn">Заказать</button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="feedback">
+          <div class="section-header">
+            <h2>Отзывы</h2>
+          </div>
+          <div class="feedback-slider">
+            <div class="feedback-slider_item">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="fotorama" data-nav="thumbs">
+                    <img
+                      src="https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/1739855/pexels-photo-1739855.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/709542/pexels-photo-709542.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/1390183/pexels-photo-1390183.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/1344265/pexels-photo-1344265.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/2869510/pexels-photo-2869510.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 object-info">
+                  <p>Объект: Индонезия</p>
+                  <p>Клиенты: 131 тыс. человек</p>
+                  <p>Ген. подрядчик: Индийский океан</p>
+                  <p>
+                    Особенности: землятресение, ценами и последующее наводнение
+                  </p>
+                  <div class="person row">
+                    <div class="col-lg-2">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Joko_Widodo_2019_official_portrait.jpg/411px-Joko_Widodo_2019_official_portrait.jpg"
+                        alt=""
+                        class="media-object"
+                      />
+                    </div>
+                    <div class="col-lg-9">
+                      <span>Король</span>
+                      <h4 class="media-heading">Джоко Видодо</h4>
+                    </div>
+                  </div>
+                  <div class="feedback-text">
+                    <p>
+                      Диких всеми рыбного снова они журчит это свой? Знаках?
+                      Далеко-далеко за словесными горами в стране гласных и
+                      согласных живут рыбные тексты.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-slider_item">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="fotorama" data-nav="thumbs">
+                    <img
+                      src="https://images.pexels.com/photos/1676019/pexels-photo-1676019.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/2128/person-woman-sitting-old.jpg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/1043558/pexels-photo-1043558.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/46259/child-face-rajasthan-smile-46259.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/3347949/pexels-photo-3347949.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/220365/pexels-photo-220365.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 object-info">
+                  <p>Объект: Кимры</p>
+                  <p>Клиенты: 1.5 тыс. человек</p>
+                  <p>Ген. подрядчик: ЗАО "Цыганский табор"</p>
+                  <p>Особенности: героин, соли, гашиш</p>
+                  <div class="person row">
+                    <div class="col-lg-2">
+                      <img
+                        src="https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/f6cd372e-9f9c-4014-97ee-e91cc38d395a/280x420"
+                        alt=""
+                        class="media-object"
+                      />
+                    </div>
+                    <div class="col-lg-9">
+                      <span>Румын</span>
+                      <h4 class="media-heading">Филипп Киркоров</h4>
+                    </div>
+                  </div>
+                  <div class="feedback-text">
+                    <p>
+                      Агентство он заманивший пунктуация подзаголовок выйти, по
+                      всей безопасную ведущими текста вопрос первую рукописи
+                      раз, это, возвращайся алфавит речью?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="feedback-slider_item">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="fotorama" data-nav="thumbs">
+                    <img
+                      src="https://images.pexels.com/photos/87772/soldiers-military-usa-weapons-87772.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/163358/war-desert-guns-gunshow-163358.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/9250/green-attraction-war-museum.jpg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/236741/pexels-photo-236741.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/208674/pexels-photo-208674.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+
+                    <img
+                      src="https://images.pexels.com/photos/76971/fighter-jet-fighter-aircraft-f-16-falcon-aircraft-76971.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 object-info">
+                  <p>Объект: Кувейт</p>
+                  <p>Клиенты: 500 тыс. человек</p>
+                  <p>Ген. подрядчик: Армия США</p>
+                  <p>Особенности: Операция "Буря в пустыне"</p>
+                  <div class="person row">
+                    <div class="col-lg-2">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Saddam_Hussein_at_trial%2C_July_2004-edit1.JPEG/405px-Saddam_Hussein_at_trial%2C_July_2004-edit1.JPEG"
+                        alt=""
+                        class="media-object"
+                      />
+                    </div>
+                    <div class="col-lg-9">
+                      <span>Бедолага</span>
+                      <h4 class="">Саддам Хусейн</h4>
+                    </div>
+                  </div>
+                  <div class="feedback-text">
+                    <p>
+                      Далеко-далеко за словесными горами в стране гласных и
+                      согласных живут, рыбные тексты. Единственное необходимыми
+                      дороге вдали своего!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="feedback-form">
+            <div class="row">
+              <div class="col-lg-8 offset-lg-2">
+                <form action="#">
+                  <h2 class="form-header">
+                    Хотите так же? Оставьте Ваши контактные данные
+                  </h2>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <label for="name-input" class="form-label"
+                        >Ваше имя</label
+                      >
+                      <input type="name" class="form-control" id="name-input" />
+                    </div>
+                    <div class="col-lg-6">
+                      <label for="phone-input" class="form-label"
+                        >Номер телефона</label
+                      >
+                      <input
+                        type="phone"
+                        class="form-control"
+                        id="phone-input"
+                      />
+                    </div>
+                  </div>
+
+                  <button class="btn">Оставьте заявку</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="scheme">
+          <div class="section-header">
+            <h2>Схема работы</h2>
+            <p>
+              Работа над Вашим объектом будет включать в себя слудующие этапы
+            </p>
+          </div>
+          <div class="row">
+            <div class="scheme-box col-lg-3 col-md-6 offset-md-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/ru/thumb/7/78/Trollface.svg/1280px-Trollface.svg.png"
+                alt=""
+              />
+              <h3>Далеко-далеко, за.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam minus aliquam quisquam doloribus rerum molestias?
+              </p>
+            </div>
+            <div class="scheme-box col-lg-3 offset-lg-1 col-md-6 offset-md-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/ru/thumb/7/78/Trollface.svg/1280px-Trollface.svg.png"
+                alt=""
+              />
+              <h3>Далеко-далеко.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel,
+                placeat.
+              </p>
+            </div>
+            <div class="scheme-box col-lg-3 offset-lg-1 col-md-6 offset-md-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/ru/thumb/7/78/Trollface.svg/1280px-Trollface.svg.png"
+                alt=""
+              />
+              <h3>Lorem, ipsum.</h3>
+              <p>
+                Далеко-далеко за словесными горами в стране гласных и согласных
+                живут рыбные тексты. Рыбными.
+              </p>
+            </div>
+            <div class="scheme-box col-lg-3 col-md-6 offset-md-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/ru/thumb/7/78/Trollface.svg/1280px-Trollface.svg.png"
+                alt=""
+              />
+              <h3>Lorem, ipsum.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                dolor quam temporibus enim quaerat, laudantium recusandae
+                explicabo minima, consequuntur repellendus a blanditiis.
+              </p>
+            </div>
+            <div class="scheme-box col-lg-3 offset-lg-1 col-md-6 offset-md-0">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/ru/thumb/7/78/Trollface.svg/1280px-Trollface.svg.png"
+                alt=""
+              />
+              <h3>Lorem.</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusamus ullam blanditiis hic laborum nemo quam!
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="all-inclusive">
+          <div class="section-header">
+            <h1>Всё на 100% включено!</h1>
+            <p>При выполнении работ вы получите</p>
+          </div>
+          <div class="">
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 1. </span>
+                    </span>
+                  </div>
+                  <div class="col-9">
+                    <h4>Далеко-далеко.</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 2. </span>
+                    </span>
+                  </div>
+                  <div class="col-9">
+                    <h4>Далеко-далеко в стране.</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 3. </span>
+                    </span>
+                  </div>
+
+                  <div class="col-9">
+                    <h4>За словесными горами</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 4. </span>
+                    </span>
+                  </div>
+                  <div class="col-9">
+                    <h4>Lorem.</h4>
+                    <p>
+                      Далеко-далеко за словесными горами в стране гласных и
+                      согласных живут рыбные.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 5. </span>
+                    </span>
+                  </div>
+                  <div class="col-9">
+                    <h4>Lorem, ipsum dolor.</h4>
+                    <p>Далеко-далеко за словесными горами в стране.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 6. </span>
+                    </span>
+                  </div>
+                  <div class="col-9">
+                    <h4>Lorem ipsum dolor sit amet.</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 7. </span>
+                    </span>
+                  </div>
+                  <div class="col-9">
+                    <h4>Материал</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="all-inclusive-media row">
+                  <div class="col-3">
+                    <span class="circle-border">
+                      <span class="circle"> 8. </span>
+                    </span>
+                  </div>
+                  <div class="col-9">
+                    <h4>Далеко-далеко за словесными горами в стране.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="problems">
+          <div class="section-header">
+            <h2>Мы развеем все опасения</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-5">
+              <div class="problems-list problems-list_bad">
+                <h4>Какие могут быть проблемы</h4>
+                <ul>
+                  <li>Стены и углы будут неровными</li>
+                  <li>Ремонт затянется на долгие месяцы</li>
+                  <li>Сложности с доставкой и разгрузкой материалов</li>
+                  <li>Останется мусор и пыль после работ</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-5 offset-md-2">
+              <div class="problems-list problems-list_good">
+                <h4>Наши решения</h4>
+                <ul>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Enim, optio?
+                  </li>
+                  <li>
+                    Далеко-далеко за словесными горами в стране гласных, и
+                    согласных живут рыбные.
+                  </li>
+                  <li>Lorem ipsum dolor sit amet.</li>
+                  <li>
+                    Далеко-далеко за словесными горами в стране гласных и
+                    согласных.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="problems-girl">
+            <img
+              src="https://s1.1zoom.ru/b6852/289/White_background_Hair_Frowning_Face_514240_3840x2160.jpg"
+              alt=""
+            />
+          </div>
+        </section>
+        <sections class="materials">
+          <div class="section-header">
+            <h2>Материалы</h2>
+            <p>
+              Мы работаем с качественными и провеременными временем материалами
+              по доступным ценам
+            </p>
+          </div>
+          <div class="">
+            <div class="row materials-slider">
+              <div class="materials-block col-lg-3 col-md-6">
+                <img
+                  src="https://images.pexels.com/photos/4109270/pexels-photo-4109270.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  alt=""
+                />
+                <h4>Мякиш</h4>
+                <p>Вкусно и полезно</p>
+                <a href="#" class="materials-link">Сертификат</a>
+              </div>
+              <div class="materials-block col-lg-3 col-md-6">
+                <img
+                  src="https://images.pexels.com/photos/4109270/pexels-photo-4109270.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  alt=""
+                />
+                <h4>Грязь</h4>
+                <p>Дёшево и надёжно</p>
+                <a href="#" class="materials-link">Сертификат</a>
+              </div>
+              <div class="materials-block col-lg-3 col-md-6">
+                <img
+                  src="https://images.pexels.com/photos/4109270/pexels-photo-4109270.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  alt=""
+                />
+                <h4>Гуано</h4>
+                <p>Экзотично и экстровагантно</p>
+                <a href="#" class="materials-link">Сертификат</a>
+              </div>
+              <div class="materials-block col-lg-3 col-md-6">
+                <img
+                  src="https://images.pexels.com/photos/4109270/pexels-photo-4109270.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  alt=""
+                />
+                <h4>Солома</h4>
+                <p>Экологично и воздушно</p>
+                <a href="#" class="materials-link">Сертификат</a>
+              </div>
+            </div>
+            <p class="materials-offer">
+              Вы можете приобрести материалы по оптовым ценам на сайте
+              <a class="materials-link">google.com</a>
+            </p>
+          </div>
+        </sections>
+        <div class="content content-howWeWork">
+          <div class="row">
+            <div class="col-lg-6 text-center">
+              <div class="content-title">
+                <h1>Посмотрит как мы работаем</h1>
+              </div>
+              <div class="content-subtitle">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Perferendis quidem officia laborum asperiores similique
+                  possimus soluta temporibus culpa, qui hic!
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 offset-lg-2 col-sm-12 offset-md-2 col-md-8">
+              <div class="content-form">
+                <form action="#">
+                  <h2 class="form-header">
+                    Оставьте свои контактные данные для связи
+                  </h2>
+                  <label for="name-input" class="form-label">Ваше имя</label>
+                  <input type="name" class="form-control" id="name-input" />
+                  <label for="phone-input" class="form-label"
+                    >Номер телефона</label
+                  >
+                  <input type="phone" class="form-control" id="phone-input" />
+                  <button class="btn">Оставьте заявку</button>
+                  <small>Получите подарок в день обращения</small>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="upsell">
+          <div class="section-header">
+            <h2>Дополнительные услуги</h2>
+            <p>Далеко-далеко за словесными горами в стране гласных.</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 upsell-block">
+              <img
+                src="https://media.istockphoto.com/photos/drunk-people-in-a-party-picture-id896553420"
+                alt=""
+              />
+              <p>Лежать на диване</p>
+              <button class="btn">Цены</button>
+            </div>
+            <div class="col-lg-4 upsell-block">
+              <img
+                src="https://media.istockphoto.com/photos/drunk-people-in-a-party-picture-id896553420"
+                alt=""
+              />
+              <p>Пянствовать всю ночь</p>
+              <button class="btn">Цены</button>
+            </div>
+            <div class="col-lg-4 upsell-block">
+              <img
+                src="https://media.istockphoto.com/photos/drunk-people-in-a-party-picture-id896553420"
+                alt=""
+              />
+              <p>Прогулы по неуважительно причине</p>
+              <button class="btn">Цены</button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="popup">
+        <div class="popup-dialog">
+          <div class="popup-content">
+            <button class="popup-close">&times;</button>
+            <h4 class="popup-header">Заинтересовало?</h4>
+            <p>Оставьте свои контактные данные <br />для свзяи</p>
+            <div class="popup-form content-form">
+              <form action="#">
+                <h2 class="form-header">
+                  Для расчёта точной стоимости <br />
+                  закажите <strong>выезд замерщика</strong>
+                </h2>
+                <label for="name-input" class="form-label">Ваше имя</label>
+                <input type="name" class="form-control" id="name-input" />
+                <label for="phone-input" class="form-label"
+                  >Номер телефона</label
+                >
+
+                <input type="phone" class="form-control" id="phone-input" />
+                <label for="message-input" class="form-label">Сообщение</label>
+                <textarea
+                  type="message"
+                  class="form-control"
+                  id="message-input"
+                  rows="3"
+                ></textarea>
+                <button class="btn">Оставьте заявку</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script
       type="text/javascript"
@@ -181,7 +878,37 @@
 
     <script type="text/javascript">
       $(document).ready(function () {
+        $('.popup-btn').on('click', function (event) {
+          event.preventDefault();
+          $('.popup').fadeIn();
+        });
+        $('.popup-close').on('click', function (e) {
+          e.preventDefault();
+          $('.popup').fadeOut();
+        });
+        $('.feedback-slider').slick();
         $('.fetures-slider').slick({
+          infinite: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          responsive: [
+            {
+              breakpoint: 991,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+            {
+              breakpoint: 767,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
+        $('.materials-slider').slick({
           infinite: true,
           slidesToShow: 4,
           slidesToScroll: 1,
